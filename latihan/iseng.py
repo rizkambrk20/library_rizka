@@ -10,9 +10,15 @@ print("********************")
 
 nama_user = input("Masukan nama kamu: ")
 
+bentuk_goa = "|_|"
+goa_kosong = [bentuk_goa]*8
+goa = goa_kosong.copy()
+
+goa[cuypy_position -1] = "|0_0|"
+
 print(f'''
 Halo {nama_user}! Coba perhatikan goa di bawah ini
-|_| |_| |_| |_| |_| |_| |_| |_|
+{goa_kosong}
 ''')
 
 pilihan_user = int(input("Menurut kamu di goa nomor berapa CUYPY berada? [1/ 2/ 3 /4 5/ 6/ 7/ 8]:"))
@@ -21,9 +27,9 @@ Konfirmasi = input(f"Apakah kamu sudah yakin jawabannya adalah {pilihan_user} [y
 
 if Konfirmasi == "yes":
     if pilihan_user == cuypy_position:
-        print(f"Selamat {nama_user} kamu menang! posisi CUYPY berada di goa {cuypy_position} dan pilihanmu adalah goa nomor {pilihan_user}.")
+        print(f"{goa} \n Selamat {nama_user} kamu menang! posisi CUYPY berada di goa {cuypy_position} dan pilihanmu adalah goa nomor {pilihan_user}.")
     else:
-        print(f"Kamu kalah! CUYPY bukan berada disitu, tapi ada di goa nomor {cuypy_position}. Sedangkan kamu memilih goa nomor {pilihan_user}.")
+        print(f"Kamu kalah! \n {goa} \n CUYPY bukan berada disitu, tapi ada di goa nomor {cuypy_position}. Sedangkan kamu memilih goa nomor {pilihan_user}.")
 elif Konfirmasi == "no":
     print("kamu keluar dari games! PAYAH SEKALI KAMU!!!")
     exit()
